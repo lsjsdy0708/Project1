@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PROJECT1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            /*스마트폰*/
+            @media screen and (max-width: 767px) {
+                @media screen and (orientation: portrait) {
+                    *{margin: 5px; padding: 0px;}
+                    html, body { height : 100% }
+                    #top_title {
+                        position: fixed;
+                        top: 0; left:0; right:0;
+                        height: 50px;
+                        background-color: white;
+                    }
+                    #left_bar{
+                        position: fixed;
+                        top: 70px; bottom:0; left: 0;
+                        width: 170px;
+                    }
+                    #left_bar>ul>li>a {
+                        display: block;
+                        height: 40px; line-height: 40px;
+                        padding-left: 15px;
+                        border-top: 1px solid ivory;
+                        border-bottom: 1px solid ivory;
+                        color: black;
+                        font-weight: bord;
+                    }
+                    #note_contents>article {
+                        margin-top: 60px;
+                        margin-left: 180px;
+                        margin-right: 10px;
+                        margin-bottom: 10px;
+                    }
+                    
+                }
+                @media screen and (orientation: landscape){
+                    *{margin: 5px; padding: 0px;}
+                    html, body { height : 100% }
+                    #top_title {
+                        position: fixed;
+                        top: 0; left:0; right:0;
+                        height: 50px;
+                        background-color: white;
+                    }
+                    #left_bar{
+                        position: fixed;
+                        top: 70px; bottom:0; left: 0;
+                        width: 170px;
+                    }
+                    #left_bar>ul>li>a {
+                        display: block;
+                        height: 40px; line-height: 40px;
+                        padding-left: 15px;
+                        border-top: 1px solid white;
+                        border-bottom: 1px solid white;
+                        color: black;
+                        font-weight: bord;
+                    }
+                    #note_contents>article {
+                        margin-top: 60px;
+                        margin-left: 180px;
+                        margin-right: 10px;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+            /*태블릿 pc*/
+            @media screen and (min-width: 768px) and (max-width: 959px) {
+                @media screen and (orientation: portrait) {
+                    *{margin: 5px; padding: 0px;}
+                    html, body { height : 100% }
+                    #top_title {
+                        position: fixed;
+                        top: 0; left:0; right:0;
+                        height: 70px;
+                        background-color: white;
+                    }
+                    #left_bar{
+                        position: fixed;
+                        top: 90px; bottom:0; left: 0;
+                        width: 210px;
+                    }
+                    #left_bar>ul>li>a {
+                        display: block;
+                        height: 40px; line-height: 40px;
+                        padding-left: 15px;
+                        border-top: 1px solid white;
+                        border-bottom: 1px solid white;
+                        color: black;
+                        font-weight: bord;
+                    }
+                    #note_contents>article {
+                        margin-top: 80px;
+                        margin-left: 220px;
+                        margin-right: 10px;
+                        margin-bottom: 10px;
+                    }
+                }
+                @media screen and (orientation: landscape){
+                    *{margin: 5px; padding: 0px;}
+                    html, body { height : 100% }
+                    #top_title {
+                        position: fixed;
+                        top: 0; left:0; right:0;
+                        height: 50px;
+                        background-color: white;
+                    }
+                    #left_bar{
+                        position: fixed;
+                        top: 70px; bottom:0; left: 0;
+                        width: 210px;
+                    }
+                    #left_bar>ul>li>a {
+                        display: block;
+                        height: 40px; line-height: 40px;
+                        padding-left: 15px;
+                        border-top: 1px solid white;
+                        border-bottom: 1px solid white;
+                        color: black;
+                    
+                    }
+                    #note_contents>article {
+                        margin-top: 60px;
+                        margin-left: 220px;
+                        margin-right: 10px;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+            /*컴퓨터*/
+            @media screen and (min-width: 960px) {
+                @media screen and (orientation: portrait) {
+                    *{margin: 5px; padding: 0px;}
+                    html, body { height : 100% }
+                    #top_title {
+                        position: fixed;
+                        top: 0; left:0; right:0;
+                        height: 70px;
+                        background-color: white;
+                    }
+                    #left_bar{
+                        position: fixed;
+                        top: 90px; bottom:0px; left: 0;
+                        width: 250px; 
+                        background-color: #DAC47F;
+                    }
+                    #left_bar>ul>li>a {
+                        display: block;
+                        height: 40px; line-height: 40px;
+                        padding-left: 15px;
+                        border-top: 1px solid #F8ECC4;
+                        border-bottom: 1px solid #F8ECC4;
+                        color: #3B3215;
+                        
+                    }
+                    #note_contents>article {
+                        margin-top: 80px;
+                        margin-left: 260px;
+                        margin-right: 10px;
+                        margin-bottom: 10px;
+                    }
+                }
+                @media screen and (orientation: landscape){
+                    *{margin-top: 0px; margin-left: 10px; margin-bottom: 10px; margin-right: 10px; padding: 0px;}
+                    html, body { 
+                        height : 100%
+                         }
+
+                    #top_title {
+                        position: fixed;
+                        top: 0px; left:20px; right:0;
+                        height: 50px; 
+                        padding-top: 15px;
+                        background-color: white;
+                        color: #3B3215;
+                    }
+                 
+                    #left_bar{
+                        position: fixed;
+                        top: 90px; bottom:0px; left: 10px;
+                        width: 150px;
+                        background-color:#FFF3CC;
+                        border-radius: 5px;
+                    }
+                    #left_bar>h2 {
+                        padding-left :19px;
+                        margin-top: 10px;
+                        color: #3B3215;
+                    }
+                    #main_menu{
+                        margin-top: 25px;
+                        margin-bottom: 0;
+                    }
+                    #main_item, #sub_item{
+                        margin: 0;
+                        padding: 0;
+                        overflow: hidden;
+                          
+                    }
+                    #left_bar>#main_menu>#main_item>a{
+                        display: block;
+                        height: 40px; line-height: 40px;
+                        padding-left: 10px;
+                        border-bottom: 1px solid #FCEEBD;
+                        color: #3B3215;
+                        text-decoration: none; 
+                        font-weight: bold;
+                    }
+                    #left_bar>#main_menu>#main_item>#sub_menu>#sub_item>a{
+                        height: 40px; line-height: 40px;
+                        padding-left: 10px;
+                        border-bottom: 1px solid #FCEEBD;
+                        color: #3B3215;
+                        text-decoration: none; 
+                        font-size:11pt;
+                       
+                    }
+                    #left_bar>#main_menu>#main_item>#sub_menu{
+                        display: none;
+                    }
+                    #left_bar>#main_menu>#main_item:hover #sub_menu{
+                        display: block;
+                    }
+                    
+                    #note_contents>article {
+                        padding-top: 80px;
+                        padding-left: 200px; 
+                        padding-right: 10px;
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header id="top_title">
+             <h1 class="logo">
+                NOTE
+             </h1>
+        </header>
+
+        <div id="left_bar">
+            <h2>OPTION</h2>
+            <ul id="main_menu"> 
+                <li id="main_item"><a href="#">HIGHLIGHT</a>
+                    <ul id="sub_menu">
+                        <li id="sub_item"><a href="#">COLOR</a></li>
+                    </ul>  
+                </li>
+                <li id="main_item"><a href="#">TABLE</a>
+                    <ul id="sub_menu">
+                        <li id="sub_item"><a href="#">SIZE</a></li>
+                    </ul>
+                </li>
+                <li id="main_item"><a href="#">LIST</a></li>
+                <li id="main_item"><a href="#">IMAGE</a></li>
+                <li id="main_item"><a href="#">PEN</a></li>
+                <li id="main_item"><a href="#">TEXTBOX</a>
+                    <ul id="sub_menu">
+                        <li id="sub_item"><a href="#">FONT</a></li>
+                        <li id="sub_item"><a href="#">FONT SIZE</a></li>
+                        <li id="sub_item"><a href="#">BOLD</a></li>
+                        <li id="sub_item"><a href="#">COLOR</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div id="note_contents">
+            <article>
+                <h2>Lorem ipsum 1</h2>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                 <h2>Lorem ipsum 2</h2>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                 <h2>Lorem ipsum 3</h2>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </article>
+        </div>
+        
+        </body>
+</html>
