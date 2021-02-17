@@ -3,6 +3,18 @@
     <head>
         <title>PROJECT1</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <style type="text/css" media="screen, print"> 
+            @font-face{
+                font-family: 'BMHANNAAir';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/BMHANNAAir.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;}
+             </style>
+        <style>
+            *{font-family:  'BMHANNAAir', sans-serif;}
+        </style>
+
         <style>
             /*스마트폰*/
             @media screen and (max-width: 767px) {
@@ -165,7 +177,7 @@
                     }
                 }
                 @media screen and (orientation: landscape){
-                    *{margin-top: 0px; margin-left: 10px; margin-bottom: 10px; margin-right: 10px; padding: 0px;}
+                    *{margin-top: 0px; margin-left: 10px; margin-bottom: 0px; margin-right: 10px; padding: 0px;}
                     html, body { 
                         height : 100%
                          }
@@ -174,17 +186,20 @@
                         position: fixed;
                         top: 0px; left:20px; right:0;
                         height: 50px; 
-                        padding-top: 15px;
+                        padding: 15px;
+                        padding-top: 25px;
+                        padding-left: 5px;
                         background-color: white;
                         color: #3B3215;
                     }
                  
                     #left_bar{
                         position: fixed;
-                        top: 90px; bottom:0px; left: 10px;
+                        top: 90px; bottom:20px; left: 10px;
                         width: 150px;
                         background-color:#FFF3CC;
                         border-radius: 5px;
+                        padding-top: 10px;
                     }
                     #left_bar>h2 {
                         padding-left :19px;
@@ -225,12 +240,81 @@
                     #left_bar>#main_menu>#main_item:hover #sub_menu{
                         display: block;
                     }
-                    
+
+                    #login>#login_button>a{
+                        position: fixed;
+                        top:20px;
+                        right: 70px;
+                        padding: 10px;
+                        color: #3B3215;
+                        border-radius: 10px;
+                        background-color: #FCEEBD;
+                        text-decoration: none; 
+                        font-weight: bold;
+                    }
+                    #create_button, #button_description,#save_button{
+                        overflow: hidden;
+                    }
+                    #new_note>#button>#create_button>a{
+                        position: fixed;
+                        top:20px;
+                        right: 130px;
+                        padding: 10px;
+                        color: #3B3215;
+                        border-radius: 8px;    
+                        background-color: #aedaf3;
+                        text-decoration: none; 
+                        font-weight: bold;
+                    }
+                    #new_note>#button>#create_button>#button_list{
+                        position: fixed;
+                        top:50px;
+                        right:50px;
+                        border-radius: 8px;
+                        padding-top:10px;
+                        font-weight: bold;
+                        text-align: center;
+                        visibility:hidden;
+                        line-height: 25px;
+                    }  
+                    #new_note>#button>#create_button>#button_list>#button_description>a{
+                        text-decoration: none;
+                        color: #3B3215;
+                        background-color: #fff9e2;
+                        padding:20px;
+                        
+                    }
+                    #new_note>#button>#create_button:hover #button_list{
+                        visibility:visible;
+                    }
                     #note_contents>article {
                         padding-top: 80px;
                         padding-left: 200px; 
                         padding-right: 10px;
-                        padding-bottom: 10px;
+                        padding-bottom: 70px;
+                        color: #3B3215;
+                    }
+                    #save>#save_button{
+                        position: fixed;
+                        bottom: 0; right:50px; left:170px;
+                        height:24px;
+                        background-color: white;
+                        padding:10px;
+                        padding-bottom:30px;
+                        line-height: 24px;
+                    }
+                    #save>#save_button>a{
+                        position:fixed;
+                        bottom: 20px; right:70px; 
+                        height:20px; line-height: 20px;
+                        color:#3B3215;
+                        background-color:#aedaf3;
+                        border-radius: 8px;
+                        padding:10px;
+                        font-weight: bold;
+                        text-decoration: none;
+                        text-align: right;
+
                     }
                 }
             }
@@ -269,9 +353,22 @@
                 </li>
             </ul>
         </div>
-
+        <div id="login">
+            <p id=login_button><a href="#">LogIn</a></p>
+        </div>
+        <div id="new_note">
+            <ul id=button>
+                <li id=create_button><a href="#">+</a>
+                    <ul id=button_list>
+                        <li id=button_description><a href="#">새 노트 만들기</a></li>
+                        <li id=button_description><a href="#">기존 노트 불러오기</a></li>
+                    </ul>
+                </li>
+            </ul>    
+        </div>
         <div id="note_contents">
             <article>
+                <input type="text" id="note">
                 <h2>Lorem ipsum 1</h2>
                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -291,6 +388,13 @@
                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </article>
         </div>
+        <footer id="save">
+            <p id="save_button"><a href="#">save</a></p>
+        </footer>
         
+
+        <script>
+            var h=document.getElementById("note").value;
+        </script>
         </body>
 </html>
