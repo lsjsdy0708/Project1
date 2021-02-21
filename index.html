@@ -191,9 +191,12 @@
                         background-color: rgba(255, 255, 255, 0.753);
                         font-size: 15pt;
                         line-height:35px;
-                        color:black;
                         font-weight: bold;
                         text-align: center;
+                    }
+                    #top_title>#logo>a{
+                        text-decoration: none;
+                        color:black;
                     }
                     #note_contents{
                         background-image: url('background-2509993_1920.jpg');
@@ -205,8 +208,6 @@
                         margin-top:80px;
                         padding-top:100px;
                         padding-bottom:30px;
-                        padding-left:320px;
-                        padding-right:320px;
                         color: white;
                         text-align: center;
                     }
@@ -306,13 +307,13 @@
                     #new_note>#button>#create_button:hover #button_list{
                         visibility:visible;
                     }
-                
+                   
                     footer{
                         line-height: 24px;
                         background-color: rgba(241, 241, 241, 0.808);
                         font-size: 9pt;
                         bottom: 0px;
-                        padding-left: 500px; padding-right: 500px; padding-top: 10px; padding-bottom: 10px;
+                        padding-top: 10px; padding-bottom: 10px;
                         overflow: hidden;
                         text-align: center;
                         color: gray;
@@ -330,8 +331,8 @@
     </head>
     <body>
         <header id="top_title">
-             <param class="logo">
-              _Portfolio_
+             <p id="logo">
+              <a href="Untitled-1.html">_Portfolio_</a>
             </p>
         </header>
         <div id="note_contents">
@@ -354,8 +355,9 @@
                 </li>
                 <li id="main_item"><a href="#">DATA SCIENCE</a>
                     <ul id="sub_menu">
-                        <li id="sub_item"><a href="#">Clssification Analysis</a></li>
-                        <li id="sub_item"><a href="#">Cluster Analysis</a></li>
+                        <li id="sub_item"><a href="data_science_classification.html">Clssification Analysis</a></li>
+                        <li id="sub_item"><a href="data_science_cluster.html">Cluster Analysis</a></li>
+                        <li id="sub_item"><a href="#">Support Vector Machine</a></li>
                     </ul>
                 </li>
                 <li id="main_item"><a href="#">PROJECT</a></li>
@@ -383,7 +385,6 @@
                 </li>
             </ul>    
         </div>
-    
         <footer>
             <p id="main">이수진</p>
             <p>경희대학교 공과대학 산업경영공학과</p>
