@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PROJECT1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <style type="text/css" media="screen, print"> 
+            @font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+             </style>
+        <style>
+            *{font-family:  'GmarketSansLight', sans-serif;}
+        </style>
+
+        <style>
+            /*스마트폰*/
+            @media screen and (max-width: 767px) {
+                @media screen and (orientation: portrait) {
+                    *{margin: 5px; padding: 0px;}
+                    html, body { height : 100% }
+                    #top_title {
+                        position: fixed;
+                        top: 0; left:0; right:0;
+                        height: 50px;
+                        background-color: white;
+                    }
+                    #left_bar{
+                        position: fixed;
+                        top: 70px; bottom:0; left: 0;
+                        width: 170px;
+                    }
+                    #left_bar>ul>li>a {
+                        display: block;
+                        height: 40px; line-height: 40px;
+                        padding-left: 15px;
+                        border-top: 1px solid ivory;
+                        border-bottom: 1px solid ivory;
+                        color: black;
+                        font-weight: bord;
+                    }
+                    #note_contents>article {
+                        margin-top: 60px;
+                        margin-left: 180px;
+                        margin-right: 10px;
+                        margin-bottom: 10px;
+                    }
+                    
+                }
+                @media screen and (orientation: landscape){
+                    *{margin: 5px; padding: 0px;}
+                    html, body { height : 100% }
+                    #top_title {
+                        position: fixed;
+                        top: 0; left:0; right:0;
+                        height: 50px;
+                        background-color: white;
+                    }
+                    #left_bar{
+                        position: fixed;
+                        top: 70px; bottom:0; left: 0;
+                        width: 170px;
+                    }
+                    #left_bar>ul>li>a {
+                        display: block;
+                        height: 40px; line-height: 40px;
+                        padding-left: 15px;
+                        border-top: 1px solid white;
+                        border-bottom: 1px solid white;
+                        color: black;
+                        font-weight: bord;
+                    }
+                    #note_contents>article {
+                        margin-top: 60px;
+                        margin-left: 180px;
+                        margin-right: 10px;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+            /*태블릿 pc*/
+            @media screen and (min-width: 768px) and (max-width: 959px) {
+                @media screen and (orientation: portrait) {
+                    *{margin: 5px; padding: 0px;}
+                    html, body { height : 100% }
+                    #top_title {
+                        position: fixed;
+                        top: 0; left:0; right:0;
+                        height: 70px;
+                        background-color: white;
+                    }
+                    #left_bar{
+                        position: fixed;
+                        top: 90px; bottom:0; left: 0;
+                        width: 210px;
+                    }
+                    #left_bar>ul>li>a {
+                        display: block;
+                        height: 40px; line-height: 40px;
+                        padding-left: 15px;
+                        border-top: 1px solid white;
+                        border-bottom: 1px solid white;
+                        color: black;
+                        font-weight: bord;
+                    }
+                    #note_contents>article {
+                        margin-top: 80px;
+                        margin-left: 220px;
+                        margin-right: 10px;
+                        margin-bottom: 10px;
+                    }
+                }
+                @media screen and (orientation: landscape){
+                    *{margin: 5px; padding: 0px;}
+                    html, body { height : 100% }
+                    #top_title {
+                        position: fixed;
+                        top: 0; left:0; right:0;
+                        height: 50px;
+                        background-color: white;
+                    }
+                    #left_bar{
+                        position: fixed;
+                        top: 70px; bottom:0; left: 0;
+                        width: 210px;
+                    }
+                    #left_bar>ul>li>a {
+                        display: block;
+                        height: 40px; line-height: 40px;
+                        padding-left: 15px;
+                        border-top: 1px solid white;
+                        border-bottom: 1px solid white;
+                        color: black;
+                    
+                    }
+                    #note_contents>article {
+                        margin-top: 60px;
+                        margin-left: 220px;
+                        margin-right: 10px;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+            /*컴퓨터*/
+            @media screen and (min-width: 960px) {
+                @media screen and (orientation: portrait) {
+                    *{margin: 5px; padding: 0px;}
+                    html, body { height : 100% }
+                    #top_title {
+                        position: fixed;
+                        top: 0; left:0; right:0;
+                        height: 70px;
+                        background-color: white;
+                    }
+                    #left_bar{
+                        position: fixed;
+                        top: 90px; bottom:0px; left: 0;
+                        width: 250px; 
+                        background-color: #DAC47F;
+                    }
+                    #left_bar>ul>li>a {
+                        display: block;
+                        height: 40px; line-height: 40px;
+                        padding-left: 15px;
+                        border-top: 1px solid #F8ECC4;
+                        border-bottom: 1px solid #F8ECC4;
+                        color: #3B3215;
+                        
+                    }
+                    #note_contents>article {
+                        margin-top: 80px;
+                        margin-left: 260px;
+                        margin-right: 10px;
+                        margin-bottom: 10px;
+                    }
+                }
+                @media screen and (orientation: landscape){
+                    *{margin: 0px; }
+                    html, body { 
+                        height : 100%
+                         }
+
+                    #top_title {
+                        position: fixed;
+                        top: 0px; left:0; right:0;
+                        height: 35px;
+                        padding:10px;
+                        background-color: rgba(255, 255, 255, 0.753);
+                        font-size: 15pt;
+                        line-height:35px;
+                        font-weight: bold;
+                        text-align: center;
+                    }
+                    #top_title>#logo>a{
+                        text-decoration: none;
+                        color:black;
+                    }
+                    #note_contents{
+                        background-image: url('background-2509993_1920.jpg');
+                        background-size: 100% 100%;
+                    }
+                    
+                    #note_contents>article {
+                        height: 380px;
+                        margin-top:80px;
+                        padding-top:100px;
+                        padding-bottom:30px;
+                        color: white;
+                        text-align: center;
+                    }
+                    #note_contents>article>p{
+                        font-size: 20px;
+                        line-height: 60px;
+                    }
+                    #note_contents>article>#sub{
+                        font-size: 15px;
+                        color: rgba(255, 255, 255, 0.842);
+                        padding-top: 30px;
+                        line-height: 10px;
+                    }
+                    #note_contents>article>h1{
+                        font-size: 55px;
+                        line-height: 50px;
+                    }
+                    #main_item, #sub_item{
+                        margin: 0;
+                        padding: 0;
+                    }
+                    #bar>#main_menu{
+                        overflow: hidden;
+                        padding-top: 30px; padding-bottom: 20px;
+                        margin-left: 10px; margin-right: 10px;
+                        width:960px;
+		                margin:0 auto;
+	                }
+                    #bar>#main_menu>#main_item{
+                        overflow: hidden;
+                        float:left;
+                    }
+                    #bar>#main_menu>#main_item>#sub_menu{text-align: center;}
+                    #bar>#main_menu>#main_item>#sub_menu>#sub_item{overflow: hidden; padding-top: 10px;}
+                    
+                    #bar>#main_menu>#main_item>a{
+                        color: black;
+                        text-decoration: none; 
+                        font-weight: bold;
+                        padding-left:50px; padding-right:50px;
+                        font-size: 15px;
+                    }
+                    #bar>#main_menu>#main_item>#sub_menu>#sub_item>a{
+                        height: 20px; line-height: 20px;
+                        color: black;
+                        text-decoration: none; 
+                        font-size:10pt;
+                        position: relative;
+                        right: 19px;
+                        
+                    }
+                    #bar>#main_menu>#main_item>#sub_menu{
+                        visibility:hidden;
+                    }
+                    #bar>#main_menu>#main_item:hover #sub_menu{
+                        visibility:visible;
+                    }
+
+                    #login>#login_button>a{
+                        position: fixed;
+                        top:7px;
+                        right: 80px;
+                        padding: 10px;
+                        color: black;  
+                        text-decoration: none; 
+                        font-weight: bold;
+                        font-size: 14px;
+                    }
+                    #create_button, #button_description,#save_button{
+                        overflow: hidden;
+                    }
+                    #new_note>#button>#create_button>a{
+                        position: fixed;
+                        font-size: 14px;
+                        top:7px;
+                        right: 140px;
+                        padding: 10px;
+                        color: black;
+                        text-decoration: none; 
+                        font-weight: bold;
+                    }
+                    #new_note>#button>#create_button>#button_list{
+                        position: fixed;
+                        top:2px;
+                        right:150px;
+                        text-align: right;
+                        visibility:hidden;
+                        line-height: 25px;
+                        font-size: 12px;
+                    }  
+                    #new_note>#button>#create_button>#button_list>#button_description>a{
+                        text-decoration: none;
+                        color:black;
+                        padding:20px;
+                        
+                    }
+                    #new_note>#button>#create_button:hover #button_list{
+                        visibility:visible;
+                    }
+                   
+                    footer{
+                        line-height: 24px;
+                        background-color: rgba(241, 241, 241, 0.808);
+                        font-size: 9pt;
+                        bottom: 0px;
+                        padding-top: 10px; padding-bottom: 10px;
+                        overflow: hidden;
+                        text-align: center;
+                        color: gray;
+                    }
+                    footer>#main{
+                        font-weight: bold;
+                    }
+                    footer>#sub{
+                        margin: 10px;
+                    }
+                    
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header id="top_title">
+             <p id="logo">
+              <a href="Untitled-1.html">_Portfolio_</a>
+            </p>
+        </header>
+        <div id="note_contents">
+            <article>
+                <p>이수진의 첫번째</p>
+                <h1>WEB Page</h1>
+                <p id="sub">무슨 말이라도 적어야겠는데 아직까지는 확정된 말이 없습니당</p>
+                <p id="sub">추가로 더 여기다가 적으려구요</p>
+            </article>
+        </div>
+        <div id="bar">
+            <ul id="main_menu"> 
+                <li id="main_item"><a href="#">STATISTIC</a>
+                    <ul id="sub_menu">
+                        <li id="sub_item"><a href="#">T 분포</a></li>
+                        <li id="sub_item"><a href="#">F 분포</a></li>
+                        <li id="sub_item"><a href="#">정규 분포</a></li>
+                        <li id="sub_item"><a href="#">CHI-SQUARE</a></li>
+                    </ul>  
+                </li>
+                <li id="main_item"><a href="#">DATA SCIENCE</a>
+                    <ul id="sub_menu">
+                        <li id="sub_item"><a href="data_science_classification.html">Clssification Analysis</a></li>
+                        <li id="sub_item"><a href="data_science_cluster.html">Cluster Analysis</a></li>
+                        <li id="sub_item"><a href="#">Support Vector Machine</a></li>
+                    </ul>
+                </li>
+                <li id="main_item"><a href="#">PROJECT</a></li>
+                <li id="main_item"><a href="#">EXAMPLE</a></li>
+                <li id="main_item"><a href="#">BOX</a>
+                    <ul id="sub_menu">
+                        <li id="sub_item"><a href="#">FONT</a></li>
+                        <li id="sub_item"><a href="#">FONT SIZE</a></li>
+                        <li id="sub_item"><a href="#">BOLD</a></li>
+                        <li id="sub_item"><a href="#">COLOR</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="login">
+            <p id=login_button><a href="#">LogIn</a></p>
+        </div>
+        <div id="new_note">
+            <ul id=button>
+                <li id=create_button><a href="#">+</a>
+                    <ul id=button_list>
+                        <li id=button_description><a href="#">새 노트 만들기</a></li>
+                        <li id=button_description><a href="#">기존 노트 불러오기</a></li>
+                    </ul>
+                </li>
+            </ul>    
+        </div>
+        <footer>
+            <p id="main">이수진</p>
+            <p>경희대학교 공과대학 산업경영공학과</p>
+            <p id="sub">lsjsdy0708@khu.ac.kr  |  010-5115-0000  |  @DO_GENIE  </p>
+        </footer>
+        
+
+        <script>
+            var h=document.getElementById("note").value;
+        </script>
+        </body>
+</html>
