@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PROJECT1-data_science</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <style type="text/css" media="screen, print"> 
+            @font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;}
+  c
+}
+        </style>
+        <style>
+            *{font-family:  'GmarketSansLight', sans-serif;}
+            #head{font-family: 'GmarketSansMedium', sans-serif;}
+        </style>
+        <style>
+             *{margin: 0px; }
+                    html, body { 
+                        height : 100%
+                         }
+
+                    #top_title {
+                        position: fixed;
+                        top: 0px; left:0; right:0;
+                        height: 35px;
+                        padding:10px;
+                        background-color: rgba(255, 255, 255, 0.753);
+                        font-size: 15pt;
+                        line-height:35px;
+                        font-weight: bold;
+                        text-align: center;
+                    }
+                    #top_title>#logo>a{
+                        text-decoration: none;
+                        color:black;
+                    }
+
+                    #login>#login_button>a{
+                        position: fixed;
+                        top:7px;
+                        right: 80px;
+                        padding: 10px;
+                        color: black;  
+                        text-decoration: none; 
+                        font-weight: bold;
+                        font-size: 14px;
+                    }
+
+                    #create_button, #button_description,#save_button{
+                        overflow: hidden;
+                    }
+                    #new_note>#button>#create_button>a{
+                        position: fixed;
+                        font-size: 14px;
+                        top:7px;
+                        right: 140px;
+                        padding: 10px;
+                        color: black;
+                        text-decoration: none; 
+                        font-weight: bold;
+                    }
+                    #new_note>#button>#create_button>#button_list{
+                        position: fixed;
+                        top:2px;
+                        right:150px;
+                        text-align: right;
+                        visibility:hidden;
+                        line-height: 25px;
+                        font-size: 12px;
+                    }  
+                    #new_note>#button>#create_button>#button_list>#button_description>a{
+                        text-decoration: none;
+                        color:black;
+                        padding:20px;
+                        
+                    }
+                    #new_note>#button>#create_button:hover #button_list{
+                        visibility:visible;
+                    }
+                    .main{
+                        padding-top:80px;
+                        padding-right:200px;
+                        padding-left: 200px;
+                        overflow: hidden; 
+                    }
+                    .main>h2{
+                        padding-bottom: 20px;
+                        color: rgb(25, 44, 53);
+                    }
+                    .main>#first_pic{
+                        float: left;
+                        padding-right:40px;
+                        padding-bottom:50px;
+                        padding-top: 40px;
+                        left:50px;
+                    }
+                    .main>#second_pic{
+                        right: 50px;
+                    }
+                    .main>p{
+                        line-height: 20px;
+                        font-size: 13px;
+                        padding-bottom: 10px;
+                        padding-top:5px;
+                    }
+                    .main>#entropy{
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+                    .main>#confusion_matrix{
+                        float: left;
+                        padding-right: 40px;
+                        padding-bottom: 50px;
+                    }
+                    .main>#additional_description{
+                        font-size: 12px;
+                        font-weight: bold;
+                    }
+                    .main>#description{
+                        padding-top: 40px;
+                    }
+                    footer{
+                        line-height: 24px;
+                        background-color: rgba(241, 241, 241, 0.808);
+                        font-size: 9pt;
+                        bottom: 0px;
+                        padding-top: 10px; padding-bottom: 10px;
+                        overflow: hidden;
+                        text-align: center;
+                        color: gray;
+                    }
+                    footer>#main{
+                        font-weight: bold;
+                    }
+                    footer>#sub{
+                        margin: 10px;
+                    }
+        </style>
+    </head>
+    <body>
+        <header id="top_title">
+             <p id="logo">
+             <a href="Untitled-1.html">_Portfolio_</a>
+            </p>
+        </header>
+
+        <div id="login">
+            <p id=login_button><a href="#">LogIn</a></p>
+        </div>
+        <div id="new_note">
+            <ul id=button>
+                <li id=create_button><a href="#">+</a>
+                    <ul id=button_list>
+                        <li id=button_description><a href="#">새 노트 만들기</a></li>
+                        <li id=button_description><a href="#">기존 노트 불러오기</a></li>
+                    </ul>
+                </li>
+            </ul>    
+        </div>
+        <div class="main">
+            <h2 id="head">Classification Analysis</h2>
+            <img id= "first_pic" src="table1.png" alt="표" width="500"/>
+            <img id="second_pic" src="tree1.png" alt="표" width="500"/>
+            <P>표의 Column을 참조해 이분법적으로 분류해 node를 결정한다.</p>
+            <p>이 과정에서 분류된 결과물이 얼마나 명확하게 나뉘었냐를 결정하기 위해서 나뉘어진 node가 반대로 얼마나 불순한가를 나타낸다.</p>
+            <p>이는 Impurity(Entropy)라고 하며 상위 node의 Entropy에서 하위 node의 Entropy를 뺀 값을 IG(Information Gain)라고 한다.</P>
+            <p>*이를 계산하기 위한 방법은</p>
+            <p id="entropy">Entropy = -Σ P(j/t) log2 P(j/t)</p>
+            <p>IG가 클수록 모델의 정확도는 상승한다.</p>
+            <br><br><br><br>
+
+            <h2 id="head">Decision Analytic Thinking</h2><br>
+
+            <h3>모델이 수립되지 않은 경우</h3><br>
+
+            <h5>1. 이익을 강조하는 방법</h5>
+            <p> 고객의 이탈확률이 0.5 이상인 node를 모두 [이탈]로 간주하고 프로모션을 진행</p>
+            <h5>2. 정확성을 강조하는 방법</h5>
+            <p> expected-value값이 0이상일 때의 고객 이탈 확률을 [이탈 node]의 기준으로 잡고 해당 고객에게 프로모션을 진행</p>
+            <br><br>
+            <h3>모델이 이미 수립된 경우</h3><br>
+            <h5>*confusion_matrix</h5>
+            <img id="confusion_matrix" src="matrix1.png" alt="confusion_matrix" width="400"/><br><br><br><br>
+            <p id="description">모델이 이미 수립되었으므로 모델평가 시 expected-value를 사용해 기대수익을 얼마나 내었는지 확인한다.</p>
+            <p id="additional_description">*여기서 expected-value는 P(확률)*V(비용)의 합 <br>
+            =[ P(Y.P)*V(Y.P) + P(N.P)*V(N.P) + P(N.N)*V(N.N) + P(Y.N)*V(Y.N) ]</p>
+        </div>
+        <footer>
+            <p id="main">이수진</p>
+            <p>경희대학교 공과대학 산업경영공학과</p>
+            <p id="sub">lsjsdy0708@khu.ac.kr  |  010-5115-0000  |  @DO_GENIE  </p>
+        </footer>
+       
+    </body>
+        
