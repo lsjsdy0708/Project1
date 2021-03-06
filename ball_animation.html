@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>볼 애니메이션</title>
+    <style type="text/css" media="screen, print"> 
+            @font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+            }
+    *{font-family:  'GmarketSansLight', sans-serif;}
+         </style>
+    <script>
+        window.onload=function(){
+            var NBALL=100;
+            var R=20;
+            var TIME_INTERVAL=33;
+            var BACK_ALPHA =0.3;
+            var canvas=document.getElementById('mycanvas');
+            var ctx=canvas.getContext('2d');
+            var wall = {left:0, right: canvas.width, top:0, bottom: canvas.height};
+            var balls=[];
+            for(var i=0; i<NBALL; i++){
+                balls[i]=new Ball(wall.right/2, wall.bottom/1, R);
+                balls[i].setVelocityAsRandom(10,16).setColorAsRandom(100,255);
+        
+            }
+            setInterval(drawFrame, TIME_INTERVAL);
+
+            function drawFrame(){
+                ctx.fillStyle='rgba(255, 255, 255, '+BACK_ALPHA+')';
+                ctx.fillRect(0,0,canvas.width, canvas.height);
+                for(i=0; i<balls.length; i++){
+                    balls[i].move().collisionWall(wall).draw(ctx);
+                }
+            }
+        };
+        function Ball(x,y,r,vx, vy, color){
+            this.x=x;
+            this.y=y;
+            this.r=r;
+            this.vx=vx;
+            this.vy=vy;
+            this.color=color;
+        }
+
+        Ball.prototype={
+            setVelocityAsRandom: function(vmin,vmax) {
+                var v=vmin+Math.random()*(vmax-vmin);
+                var t=2*Math.PI*Math.random();
+                this.vx=v*Math.cos(t);
+                this.vy=v*Math.sin(t);
+                return this;
+            }, 
+            setColorAsRandom: function(lmin, lmax){
+                var R=Math.floor(lmin+Math.random()*(lmax-lmin));
+                var G=Math.floor(lmin+Math.random()*(lmax-lmin));
+                var B=Math.floor(lmin+Math.random()*(lmax-lmin));
+                this.color='rgb('+R+', '+G+', '+B+')';
+                return this;
+            },
+            draw: function(ctx){
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.r, 0, 2*Math.PI, true);
+                ctx.fill();
+                return this;
+            },
+            move: function(){
+                this.x+=this.vx;
+                this.y+=this.vy;
+                return this;
+            }, 
+            collisionWall: function(wall){
+                if(this.x - this.r <wall.left){
+                    this.x=wall.left + this.r;
+                    if( this.vx<0) this.vx*=-1;
+                }
+                if(this.x + this.r >wall.right){
+                    this.x=wall.right - this.r;
+                    if( this.vx>0) this.vx*=-1;
+                }
+                if(this.y - this.r <wall.top){
+                    this.y=wall.top + this.r;
+                    if( this.vy<0) this.vy*=-1;
+                } 
+                if(this.y + this.r >wall.bottom){
+                    this.y=wall.bottom - this.r;
+                    if( this.vy>0) this.vy*=-1;
+                }
+                return this;
+            }
+        };
+    </script>
+      <style>
+                    *{margin: 0px; }
+                    html, body { 
+                        height : 100%
+                        }
+                    #top_title {
+                        position: fixed;
+                        top: 0px; left:0; right:0;
+                        height: 35px;
+                        padding:10px;
+                        background-color: rgba(255, 255, 255, 0.753);
+                        font-size: 15pt;
+                        line-height:35px;
+                        font-weight: bold;
+                        text-align: center;
+                                    }
+                    #top_title>#logo>a{
+                        text-decoration: none;
+                        color:black;
+                                    }
+                    #login>#login_button>a{
+                        position: fixed;
+                        top:7px;
+                        right: 80px;
+                        padding: 10px;
+                        color: black;  
+                        text-decoration: none; 
+                        font-weight: bold;
+                        font-size: 14px;
+                    }
+                    #create_button, #button_description,#save_button{
+                        overflow: hidden;
+                    }
+                    #new_note>#button>#create_button>a{
+                        position: fixed;
+                        font-size: 14px;
+                        top:7px;
+                        right: 140px;
+                        padding: 10px;
+                        color: black;
+                        text-decoration: none; 
+                        font-weight: bold;
+                    }
+                    #new_note>#button>#create_button>#button_list{
+                        position: fixed;
+                        top:2px;
+                        right:150px;
+                        text-align: right;
+                        visibility:hidden;
+                        line-height: 25px;
+                        font-size: 12px;
+                    }  
+                    #new_note>#button>#create_button>#button_list>#button_description>a{
+                        text-decoration: none;
+                        color:black;
+                        padding:20px;
+                        
+                    }
+                    #new_note>#button>#create_button:hover #button_list{
+                        visibility:visible;
+                    }
+                   
+                    footer{
+                        line-height: 24px;
+                        background-color: rgba(241, 241, 241, 0.808);
+                        font-size: 9pt;
+                        bottom: 0px;
+                        padding-top: 10px; padding-bottom: 10px;
+                        overflow: hidden;
+                        text-align: center;
+                        color: gray;
+                    }
+                    footer>#main{
+                        font-weight: bold;
+                    }
+                    footer>#sub{
+                        margin: 10px;
+                    }
+                    
+</style>
+</head>
+<body>
+    <header id="top_title">
+        <p id="logo">
+         <a href="index.html">_Portfolio_</a>
+       </p>
+   </header>
+   <div id="login">
+    <p id=login_button><a href="#">LogIn</a></p>
+    </div>
+    <div id="new_note">
+        <ul id=button>
+            <li id=create_button><a href="#">+</a>
+                <ul id=button_list>
+                    <li id=button_description><a href="#">새 노트 만들기</a></li>
+                    <li id=button_description><a href="#">기존 노트 불러오기</a></li>
+                </ul>
+            </li>
+        </ul>    
+    </div>
+    <canvas id="mycanvas" width="1600" height="800"></canvas>
+    <footer>
+        <p id="main">이수진</p>
+        <p>경희대학교 공과대학 산업경영공학과</p>
+        <p id="sub">lsjsdy0708@khu.ac.kr  |  010-5115-0000  |  @DO_GENIE  </p>
+    </footer> 
+    </body>
+    </html>

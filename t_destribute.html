@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css" media="screen, print"> 
+        @font-face {
+font-family: 'GmarketSansLight';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+         </style>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+        유의수준에 따른 t분포 값을 나타냄<br>
+        해당 값은 y축이 t-value, x축이 p-value(유의수준)을 나타낸다.<br>
+        클릭 하면 해당 그래프는 사라진다.
+    </p>
+</figure>
+
+<style>
+    *{font-family:  'GmarketSansLight', sans-serif;}
+</style>
+
+<style>
+    .highcharts-figure, .highcharts-data-table table {
+    min-width: 320px; 
+    max-width: 1000px;
+    margin: 4em auto;
+}
+
+#container {
+    height: 600px;
+}
+
+.highcharts-data-table table {
+	font-family: 'GmarketSansLight', sans-serif;
+	border-collapse: collapse;
+	border: 1px solid #EBEBEB;
+	margin: 10px auto;
+	text-align: center;
+	width: 100%;
+	max-width: 500px;
+}
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+.highcharts-data-table th {
+	font-weight: 600;
+    padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+    padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+</style>
+
+
+<script>
+Highcharts.chart('container', {
+    chart: {
+        type: 'area'
+    },
+    accessibility: {
+        description: 'Image description: 유의수준 p-value에 따른 t-value의 값'
+    },
+    title: {
+        text: 'T-distribute'
+    },
+    subtitle: {
+        text: '자유도와 p-value값에 따른 t분포'
+    },
+
+    xAxis: {
+        allowDecimals: false,
+        categories: [0.4,0.25, 0.1, 0.05, 0.025, 0.01, 0.005, 0.0025, 0.001, 0.0005],
+        labels: {
+            formatter: function () {    
+                return this.value; // clean, unformatted number for year
+            }
+        },
+    
+        accessibility: {
+            rangeDescription: 'Range: -4 to 4.'
+        }
+    },
+    yAxis: {
+        title: {
+            text: 't-분포'
+        },
+        labels: {
+            formatter: function () {
+                return this.value;
+            }
+        }
+    },
+
+
+    tooltip: {
+        pointFormat: '{series.name} 에서 <b>해당 유의수준에서의 값은 </b><br/>{point.y}'
+    },
+
+
+    plotOptions: {
+        area: {
+            marker: {
+                enabled: false,
+                symbol: 'circle',
+                radius: 2,
+                states: {
+                    hover: {
+                        enabled: true
+                    }
+                }
+            }
+        }
+    },
+    
+    series: [
+        {
+        name: 'df=1',
+        data: [0.325,1.000, 3.078, 6.314, 12.706, 31.821, 63.657, 127.32, 318.31, 636.62
+        ]
+    }, {
+        name: 'df=2',
+        data: [0.289, 0.816, 1.886, 2.920, 4.303, 6.965, 9.925, 14.089, 22.327, 31.599]
+    },
+    {
+        name: 'df=3',
+        data: [0.277, 0.765, 1.638, 2.353, 3.182, 4.541, 5.841, 7.453, 10.215, 12.924]
+    },{
+        name: 'df=4',
+        data: [0.271, 0.741, 1.533, 2.132, 2.776, 3.747, 4.604, 5.598, 7.173, 8.610 
+        ]
+    },{
+        name: 'df=5',
+        data: [0.267, 0.727, 1.476, 2.015, 2.571, 3.365, 4.032, 4.774, 5.893, 6.869]
+    },{
+        name: 'df=6',
+        data: [0.265, 0.718, 1.440, 1.943, 2.447, 3.143, 3.707, 4.137, 5.208, 5.959
+        ]
+    },{
+        name: 'df=7',
+        data: [0.263, 0.711, 1.415, 1.895, 2.365, 2.998, 3.499, 4.029, 4.785, 5.408]
+    },{
+        name: 'df=8',
+        data: [0.262, 0.706, 1.397, 1.86, 2.306, 2.896, 3.355, 3.833, 4.501, 5.041
+        ]
+    },{
+        name: 'df=9',
+        data: [0.261, 0.703, 1.383, 1.833, 2.262, 2.821, 3.25, 3.69, 4.297, 4.781
+        ]
+    },{
+        name: 'df=10',
+        data: [0.26, 0.7, 1.372, 1.812, 2.228, 2.764, 3.169, 3.581, 4.144, 4.587
+        ]
+    },{
+        name: 'df=11',
+        data: [0.26, 0.697, 1.363, 1.796, 2.201, 2.718, 3.106, 3.497, 4.025, 4.437]
+    },{
+        name: 'df=15',
+        data: [0.258, 0.691, 1.341 ,1.753, 2.131, 2.602, 2.947, 3.286, 3.833, 4.073        ]
+    },{
+        name: 'df=20',
+        data: [0.257, 0.687, 1.325, 1.725, 2.086, 2.528, 2.845, 3.153, 3.552, 3.850
+        ]
+    },{
+        name: 'df=21',
+        data: [0.257, 0.686, 1.323, 1.721, 2.080, 2.518, 2.831, 3.135, 3.527, 3.819
+        ]
+    },{
+        name: 'df=25',
+        data: [0.256, 0.684, 1.316, 1.708, 2.060, 2.485, 2.787, 3.078, 3.450, 3.735
+        ]
+    },{
+        name: 'df=30',
+        data: [0.256, 0.683, 1.310, 1.697, 2.043, 2.457, 2.750, 3.030, 3.385, 3.646
+        ]
+    },{
+        name: 'df=40',
+        data: [0.255, 0.681, 1.303, 1.684, 2.021, 2.423, 2.704, 2.971, 3.307, 3.551
+        ]
+    },{
+        name: 'df=120',
+        data: [0.254, 0.677, 1.289, 1.658, 1.980, 2.358, 2.617, 2.86, 3.16, 3.373
+        ]
+    }]
+});
+</script>
+
+                <style>
+                    *{margin: 0px; }
+                    html, body { 
+                        height : 100%
+                        }
+                    #top_title {
+                        position: fixed;
+                        top: 0px; left:0; right:0;
+                        height: 35px;
+                        padding:10px;
+                        background-color: rgba(255, 255, 255, 0.753);
+                        font-size: 15pt;
+                        line-height:35px;
+                        font-weight: bold;
+                        text-align: center;
+                                    }
+                    #top_title>#logo>a{
+                        text-decoration: none;
+                        color:black;
+                                    }
+                    #login>#login_button>a{
+                        position: fixed;
+                        top:7px;
+                        right: 80px;
+                        padding: 10px;
+                        color: black;  
+                        text-decoration: none; 
+                        font-weight: bold;
+                        font-size: 14px;
+                    }
+                    #create_button, #button_description,#save_button{
+                        overflow: hidden;
+                    }
+                    #new_note>#button>#create_button>a{
+                        position: fixed;
+                        font-size: 14px;
+                        top:7px;
+                        right: 140px;
+                        padding: 10px;
+                        color: black;
+                        text-decoration: none; 
+                        font-weight: bold;
+                    }
+                    #new_note>#button>#create_button>#button_list{
+                        position: fixed;
+                        top:2px;
+                        right:150px;
+                        text-align: right;
+                        visibility:hidden;
+                        line-height: 25px;
+                        font-size: 12px;
+                    }  
+                    #new_note>#button>#create_button>#button_list>#button_description>a{
+                        text-decoration: none;
+                        color:black;
+                        padding:20px;
+                        
+                    }
+                    #new_note>#button>#create_button:hover #button_list{
+                        visibility:visible;
+                    }
+                   
+                    footer{
+                        line-height: 24px;
+                        background-color: rgba(241, 241, 241, 0.808);
+                        font-size: 9pt;
+                        bottom: 0px;
+                        padding-top: 10px; padding-bottom: 10px;
+                        overflow: hidden;
+                        text-align: center;
+                        color: gray;
+                    }
+                    footer>#main{
+                        font-weight: bold;
+                    }
+                    footer>#sub{
+                        margin: 10px;
+                    }
+                    
+</style>
+</head>
+<body>
+    <header id="top_title">
+        <p id="logo">
+         <a href="index.html".html">_Portfolio_</a>
+       </p>
+   </header>
+   <div id="login">
+    <p id=login_button><a href="#">LogIn</a></p>
+    </div>
+    <div id="new_note">
+        <ul id=button>
+            <li id=create_button><a href="#">+</a>
+                <ul id=button_list>
+                    <li id=button_description><a href="#">새 노트 만들기</a></li>
+                    <li id=button_description><a href="#">기존 노트 불러오기</a></li>
+                </ul>
+            </li>
+        </ul>    
+    </div>
+    <footer>
+        <p id="main">이수진</p>
+        <p>경희대학교 공과대학 산업경영공학과</p>
+        <p id="sub">lsjsdy0708@khu.ac.kr  |  010-5115-0000  |  @DO_GENIE  </p>
+    </footer>
+</body>
+</html>

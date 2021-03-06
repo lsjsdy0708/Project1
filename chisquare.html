@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css" media="screen, print"> 
+        @font-face {
+font-family: 'GmarketSansLight';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+         </style>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+        자유도에 따른 카이제곱분포 값을 나타냄<br>
+        해당 값은 y축이 카이제곱분포값, x축이 자유도를 나타낸다.<br>
+        클릭 하면 해당 그래프는 사라진다.
+    </p>
+</figure>
+
+<style>
+    *{font-family:  'GmarketSansLight', sans-serif;}
+</style>
+
+<style>
+    .highcharts-figure, .highcharts-data-table table {
+    min-width: 320px; 
+    max-width: 1000px;
+    margin: 4em auto;
+}
+
+#container {
+    height: 500px;
+}
+
+.highcharts-data-table table {
+	font-family: 'GmarketSansLight', sans-serif;
+	border-collapse: collapse;
+	border: 1px solid #EBEBEB;
+	margin: 10px auto;
+	text-align: center;
+	width: 100%;
+	max-width: 500px;
+}
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+.highcharts-data-table th {
+	font-weight: 600;
+    padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+    padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+</style>
+
+
+<script>
+Highcharts.chart('container', {
+    chart: {
+        type: 'area'
+    },
+    accessibility: {
+        description: 'Image description: 자유도에 따른 카이제곱분포값'
+    },
+    title: {
+        text: 'Chi_Square-distribute'
+    },
+    subtitle: {
+        text: '자유도와 X^2값에 따른 카이제곱분포'
+    },
+
+    xAxis: {
+        allowDecimals: false,
+        categories: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 24, 26, 28, 30, 40, 50, 60],
+        labels: {
+            formatter: function () {    
+                return this.value; // clean, unformatted number for year
+            }
+        },
+    
+        accessibility: {
+            rangeDescription: 'Range: -4 to 4.'
+        }
+    },
+    yAxis: {
+        title: {
+            text: '카이제곱분포'
+        },
+        labels: {
+            formatter: function () {
+                return this.value;
+            }
+        }
+    },
+
+
+    tooltip: {
+        pointFormat: '{series.name} 에서 <b>해당 자유도에서의 Chi-Square값은 </b><br/>{point.y}'
+    },
+
+
+    plotOptions: {
+        area: {
+            marker: {
+                enabled: false,
+                symbol: 'circle',
+                radius: 2,
+                states: {
+                    hover: {
+                        enabled: true
+                    }
+                }
+            }
+        }
+    },
+    
+    series: [
+        {
+        name: 'X^2=0.99',
+        data: [0.00, 0.020, 0.115, 0.297, 0.554, 0.872, 1.239, 1.647, 2.088, 2.558, 3.053, 3.571, 4.107, 4.660, 5.229, 5.812, 6.408, 7.015, 7.633, 8.26, 9.542, 10.856, 12.198, 13.565, 14.953, 22.164, 27.707, 37.485
+        ]
+    }, {
+        name: 'X^2=0.95',
+        data: [0.004, 0.103, 0.352, 0.711, 1.145, 1.635, 2.167, 2.733, 3.325, 3.940, 4.575, 5.226, 5.892, 6.571, 7.261, 7.962, 8.672, 9.390, 10.117, 10.851, 12.338, 13.848, 15.379, 16.928, 18.493, 26.509, 34.764, 43.188
+]
+    },
+    {
+        name: 'X^2=0.90',
+        data: [0.016, 0.211, 0.584, 1.063, 1.610, 2.204, 2.833, 3.490, 4.168, 4.865, 5.578, 6.304, 7.042, 7.790, 8.547, 9.312, 10.085, 10.865, 11.651, 12.443, 14.041, 15.659, 17.292, 18.939, 20.599, 29.051, 37.689, 46.459]
+    },{
+        name: 'X^2=0.75',
+        data: [0.102, ,0.575, 1.212, 1.923, 2.675, 3.455, 4.255, 5.071, 5.899, 6.737, 7.584, 8.438, 9.299, 10.165, 11.073, 11.912, 13.675, 14.562, 15.452, 17.240, 19.037, 20.843, 22.657, 24.478, 33.660, 42.942, 52.294
+        ]
+    },{
+        name: 'X^2=0.50',
+        data: [0.455, 1.386, 2.366, 3.357, 4.351, 5.348, 6.346, 7.344, 8.343, 9.342, 10.341, 11.340, 12.340, 13.339, 14.339, 15.338, 16.338, 17.338, 18.338, 19.337, 21.337, 23.337, 25.336, 27.336, 29.336, 39.335, 49.335, 59.335
+]
+    },{
+        name: 'X^2=0.25',
+        data: [1.32, 2.77, 4.11, 5.39, 6.63, 7.84, 9.04, 10.22, 11.39, 12.55, 13.70, 14.85, 15.98, 17.12, 18.25, 19.37, 20.49, 21.60, 22.72, 23.83, 26.04, 28.24, 30.43, 32.62, 34.8, 45.62, 56.33, 66.98
+
+        ]
+    },{
+        name: 'X^2=0.10',
+        data: [2.71, 4.61, 6.25, 7.78, 9.24, 10.64, 12.02, 13.36, 14.68, 15.99, 17.28, 18.55, 19.81, 21.06, 22.31, 23.54, 24.77, 25.99, 27.20, 28.41, 30.81, 33.20, 35.56, 37.92, 40.26, 51.8, 63.17, 74.4
+]
+    },{
+        name: 'X^2=0.05',
+        data: [3.84, 5.99, 7.81, 9.49, 11.07, 12.59, 14.07, 15.51, 16.92, 18.31, 21.03, 22.36, 23.68, 25, 26.3, 27.59, 28.87, 30.14, 31.41, 33.92, 36.42, 38.89, 41.34, 43.77, 55.76, 67.50, 79.08
+        ]
+    },{
+        name: 'X^2=0.01',
+        data: [6.63, 9.21, 11.34, 15.09, 16.81, 18.48, 20.09 ,21.67, 23.21, 24.72, 26.22, 27.69, 29.14, 30.58, 32, 33.41, 34.8, 36.19, 37.57, 40.29, 42.98, 45.64, 48.28, 50.89, 63.69, 76.15, 88.38
+        ]
+    }
+    ]
+});
+</script>
+
+                <style>
+                    *{margin: 0px; }
+                    html, body { 
+                        height : 100%
+                        }
+                    #top_title {
+                        position: fixed;
+                        top: 0px; left:0; right:0;
+                        height: 35px;
+                        padding:10px;
+                        background-color: rgba(255, 255, 255, 0.753);
+                        font-size: 15pt;
+                        line-height:35px;
+                        font-weight: bold;
+                        text-align: center;
+                                    }
+                    #top_title>#logo>a{
+                        text-decoration: none;
+                        color:black;
+                                    }
+                    #login>#login_button>a{
+                        position: fixed;
+                        top:7px;
+                        right: 80px;
+                        padding: 10px;
+                        color: black;  
+                        text-decoration: none; 
+                        font-weight: bold;
+                        font-size: 14px;
+                    }
+                    #create_button, #button_description,#save_button{
+                        overflow: hidden;
+                    }
+                    #new_note>#button>#create_button>a{
+                        position: fixed;
+                        font-size: 14px;
+                        top:7px;
+                        right: 140px;
+                        padding: 10px;
+                        color: black;
+                        text-decoration: none; 
+                        font-weight: bold;
+                    }
+                    #new_note>#button>#create_button>#button_list{
+                        position: fixed;
+                        top:2px;
+                        right:150px;
+                        text-align: right;
+                        visibility:hidden;
+                        line-height: 25px;
+                        font-size: 12px;
+                    }  
+                    #new_note>#button>#create_button>#button_list>#button_description>a{
+                        text-decoration: none;
+                        color:black;
+                        padding:20px;
+                        
+                    }
+                    #new_note>#button>#create_button:hover #button_list{
+                        visibility:visible;
+                    }
+                   
+                    footer{
+                        line-height: 24px;
+                        background-color: rgba(241, 241, 241, 0.808);
+                        font-size: 9pt;
+                        bottom: 0px;
+                        padding-top: 10px; padding-bottom: 10px;
+                        overflow: hidden;
+                        text-align: center;
+                        color: gray;
+                    }
+                    footer>#main{
+                        font-weight: bold;
+                    }
+                    footer>#sub{
+                        margin: 10px;
+                    }
+                    
+</style>
+</head>
+<body>
+    <header id="top_title">
+        <p id="logo">
+         <a href="index.html">_Portfolio_</a>
+       </p>
+   </header>
+   <div id="login">
+    <p id=login_button><a href="#">LogIn</a></p>
+    </div>
+    <div id="new_note">
+        <ul id=button>
+            <li id=create_button><a href="#">+</a>
+                <ul id=button_list>
+                    <li id=button_description><a href="#">새 노트 만들기</a></li>
+                    <li id=button_description><a href="#">기존 노트 불러오기</a></li>
+                </ul>
+            </li>
+        </ul>    
+    </div>
+    <footer>
+        <p id="main">이수진</p>
+        <p>경희대학교 공과대학 산업경영공학과</p>
+        <p id="sub">lsjsdy0708@khu.ac.kr  |  010-5115-0000  |  @DO_GENIE  </p>
+    </footer>
+</body>
+</html>
